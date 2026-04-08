@@ -1,0 +1,152 @@
+/*
+ 
+  
+ EXERCICIO 1
+
+ disciplina("A").
+disciplina("B").
+disciplina("C").
+disciplina("D").
+
+pre_requisito("A", "B").
+
+ja_cursou("eduardo", "A").
+
+pode_cursar(Aluno, Disciplina) :-
+    ja_cursou(Aluno, PreRequisito),
+	pre_requisito(PreRequisito, Disciplina).
+
+
+EXERCICIO 2
+
+
+disciplina("A").
+aluno("gabriel").
+aluno("eduardo").
+
+aprovado(Aluno, Disciplina, Nota) :-
+    (   Nota > 6
+    ->  write('Aprovado')
+    ;   write('Reprovado')
+    ).
+
+
+EXERCICIO 3
+
+
+estrada("A", "B").
+estrada("A", "C").
+estrada("D", "E").
+
+pode_viajar(De, Para) :-
+    (   estrada(De, Para)
+    ->  write('Pode')
+    ;   write('Não pode')
+    ).
+
+
+EXERCICIO 4
+
+
+esta_em("lapis", "sala").
+esta_em("caneta", "corredor").
+
+comodo_em("sala", "A").
+comodo_em("corredor", "B").
+
+localizacao_geral(Objeto, Casa) :-
+    esta_em(Objeto, Comodo),
+    comodo_em(Comodo, Casa).
+
+
+EXERCICIO 5
+
+
+ingrediente("lasanha", "A").
+ingrediente("lasanha", "B").
+ingrediente("lasanha", "C").
+ingrediente("lasanhaveg", "E").
+ingrediente("lasanhaveg", "G").
+
+vegano("E").
+vegano("G").
+
+prato_vegano(Prato) :- 
+    \+ (ingrediente(Prato, Item), \+ vegano(Item)).
+
+
+EXERCICIO 6
+
+filme("a noite escura", "terror").
+filme("a noite larga", "terror").
+filme("a noite profunda", "terror").
+filme("gente grande", "infantil").
+
+usuario_gosta("gabriel", "infantil").
+usuario_gosta("eduardo", "terror").
+
+recomendar(Filme, Usuario):-
+	usuario_gosta(Usuario, Genero),
+    filme(Filme, Genero).
+    
+EXERCICIO 7 
+
+sobre("cima", "baixo").
+sobre("cima", "c").
+no_chao("B").
+
+abaixo(X, Y):-
+    sobre(X, Y).
+
+bloco_livre(X):-
+    (sobre(X, _) ; sobre(_, X) ; no_chao(X)), 
+    \+ sobre(_, X).
+
+EXERCICIO 8
+
+tem_penas("A").
+tem_penas("B").
+poe_ovos("A").
+
+ave(X):-
+    tem_penas(X),
+    poe_ovos(X).
+
+EXERCICIO 9
+
+cliente("gabriel", 1226).
+cliente("eduardo", 10).
+produto("lapis", 20).
+produto("caneta", 10).
+
+pode_comprar(Nome, Item):-
+    cliente(Nome, Saldo),
+    produto(Item, Preco),
+   	Preco =< Saldo.
+
+EXERCICIO 10
+
+
+venceu("a", "b").
+venceu("a", "c").
+venceu("b", "c").
+
+invicto(Jogador) :-
+    \+ venceu(_, Jogador). 
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
